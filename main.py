@@ -7,15 +7,14 @@ def main():
     print("2. 20 Sided Dice")
     print("3. Custom dice")
     userChoice = input("Select an option to start: ")
-    # if userChoice == 3:
-    #     customSides = input("Please input an even number of sides")
-
+   
     if userChoice == '1':
         new_dice = Dice(6)
     elif userChoice == '2':
         new_dice = Dice(20)
     else:
-        new_dice = Dice(customSides)
+       customSides = input("Please input an even number of sides")
+       new_dice = Dice(customSides)
 
 
     while(True):
@@ -26,8 +25,11 @@ def main():
 
         if diceChoice == '1':
             rolledNum = new_dice.roll()
-            print("You rolled: ", rolledNum)
-            print("Total: ", new_dice.total)
+            if(rolledNum == 0):
+                print("Dice must be an even number to roll!")
+            else:
+                print("You rolled: ", rolledNum)
+                print("Total: ", new_dice.total)
         elif diceChoice == '2':
             new_dice.clear()
         else:

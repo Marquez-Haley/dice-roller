@@ -11,7 +11,7 @@ class Dice:
 
     def roll(self):
         if self.sides == None:
-            print("Dice is not an even number!")
+            number = 0
         else:
             number = random.randint(1, self.sides)
             self.total += number
