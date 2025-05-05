@@ -20,6 +20,7 @@ def main():
     while(True):
         print("1. Roll")
         print("2. Clear")
+        print("3. Undo Last Roll")
         print("3. Exit")
         diceChoice = input()
 
@@ -29,9 +30,14 @@ def main():
                 print("Dice must be an even number to roll!")
             else:
                 print("You rolled: ", rolledNum)
-                print("Total: ", new_dice.total)
+                print("Total: ", new_dice.get_total())
         elif diceChoice == '2':
             new_dice.clear()
+        elif diceChoice == '3':
+            if new_dice.undo_last_roll():
+                print("Total: ", new_dice.get_total())
+            else:
+                print("Nothing to undo! Try rolling first!")
         else:
             break
 

@@ -8,6 +8,7 @@ class Dice:
             self.sides = None
 
         self.total = 0
+        self.history = []
 
     def roll(self):
         if self.sides == None:
@@ -15,6 +16,7 @@ class Dice:
         else:
             number = random.randint(1, self.sides)
             self.total += number
+            self.history.append(number)
         return number
     
     def get_total(self):
@@ -22,3 +24,12 @@ class Dice:
     
     def clear(self):
         self.total = 0
+        self.history = []
+
+    def undo_last_roll(self):
+        if self.history == [] and self.total == 0:
+            return False
+        else:
+            last = self.history.pop()
+            self.total -= last
+            return True
