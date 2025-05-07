@@ -17,7 +17,7 @@ class Dice:
             number = random.randint(1, self.sides)
             self.total += number
             self.history.append(number)
-        return 7
+        return number
     
     def get_total(self):
         return self.total
