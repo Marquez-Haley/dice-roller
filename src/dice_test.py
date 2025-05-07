@@ -1,5 +1,5 @@
 import unittest
-from dice import Dice
+from src.dice import Dice
 from unittest.mock import patch
 
 class TestDiceRoller(unittest.TestCase):

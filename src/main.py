@@ -1,4 +1,4 @@
-from dice import Dice
+from src.dice import Dice
 
 def main():
     print("Welcome to Dice Roller!")
